@@ -1,97 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="theme-color" content="#f7f7f5">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <title>Achik Tash | Mountain Memory</title>
+  <meta
+    name="theme-color"
+    content="#f5f5f2"
+  >
+
+  <link rel="manifest" href="manifest.json">
 
   <link rel="stylesheet" href="style.css">
+
+  <title>MURAS — Mountain Memory</title>
 </head>
 
 <body>
 
-  <main class="peak-card">
+  <main class="app">
 
-    <!-- Peak photo -->
-    <div class="photo-container">
-      <img
-        src="images/achik-tash.jpg"
-        alt="Achik Tash Peak"
-        class="peak-photo"
-      >
-    </div>
+    <!-- HOME -->
+    <section id="home">
 
-    <!-- Congratulations -->
-    <section class="intro">
+      <div class="hero">
 
-      <p class="eyebrow">
-        MOUNTAIN MEMORY
-      </p>
+        <p class="eyebrow">
+          MURAS
+        </p>
 
-      <h1>
-        Куттуктайбыз!
-      </h1>
+        <h1>
+          Mountain<br>
+          Memory
+        </h1>
 
-      <p class="subtitle">
-        Сиз Ачык-Таш чокусуна жеттиңиз.
-      </p>
+        <p class="description">
+          Discover the stories of the mountains.
+        </p>
+
+        <button id="scanButton">
+          SCAN QR
+        </button>
+
+      </div>
 
     </section>
 
-    <!-- Peak information -->
-    <section class="peak-info">
+
+    <!-- QR SCANNER -->
+    <section id="scanner" class="hidden">
+
+      <button id="backButton" class="back">
+        ← Back
+      </button>
 
       <h2>
-        Ачык-Таш
-        <span>| Achik Tash</span>
+        Scan the peak
       </h2>
 
-      <p class="elevation">
-        4066 <span>m</span>
+      <p class="scanner-text">
+        Point your camera at the QR code.
       </p>
+
+      <video
+        id="camera"
+        autoplay
+        muted
+        playsinline
+      ></video>
+
+      <p id="scanStatus"></p>
 
     </section>
 
-    <div class="divider"></div>
 
-    <!-- History -->
-    <section class="history">
+    <!-- PEAK -->
+    <section id="peak" class="hidden">
 
-      <div class="history-title">
-        <span>📜</span>
-        <h3>Тарыхы</h3>
+      <div class="photo-container">
+
+        <img
+          id="peakPhoto"
+          src=""
+          alt="Mountain peak"
+        >
+
       </div>
 
-      <p>
-        Пик Ачык-Таш (4066 м) — малоизвестная и сложная
-        для восхождения в категории 1б. Название переводится
-        как «открытый камень», что отражает её скальный характер
-        и обнаженные гребни, привлекающие любителей гор.
-      </p>
 
-      <div class="language-line">
-        English
+      <div class="content">
+
+        <p class="eyebrow">
+          MURAS
+        </p>
+
+        <h1>
+          Куттуктайбыз!
+        </h1>
+
+        <p id="congratulation">
+        </p>
+
+
+        <h2 id="peakName">
+        </h2>
+
+        <p id="elevation" class="elevation">
+        </p>
+
+
+        <div class="divider"></div>
+
+
+        <h3>
+          📜 Тарыхы / History
+        </h3>
+
+
+        <h4>
+          Кыргызча
+        </h4>
+
+        <p id="historyKy">
+        </p>
+
+
+        <h4>
+          English
+        </h4>
+
+        <p id="historyEn">
+        </p>
+
       </div>
-
-      <p>
-        Achik Tash Peak (4066 m) is a little-known and challenging
-        peak, classified as 1Б in climbing difficulty. Its name
-        translates as “open stone,” reflecting its rocky character
-        and exposed ridges that attract mountain enthusiasts.
-      </p>
 
     </section>
-
-    <!-- Footer -->
-    <footer>
-      <span>🏔️</span>
-      <span>Muras</span>
-    </footer>
 
   </main>
 
+
+  <script src="app.js"></script>
+
 </body>
+
 </html>
